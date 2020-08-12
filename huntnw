@@ -1,0 +1,11 @@
+#!/bin/bash
+
+QUERY=`echo $1| sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'`
+
+
+for fn in $(grep -rEic "$QUERY" index | grep -v ':0' | sort -t: -nrk2 | awk -F: '{print $1}');do
+PA=$fn
+echo "<div class='box'><a href='$PA'>$PA</a><p>"`grep -i "$QUERY" $PA | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'`"</p></div>"
+done
+
+

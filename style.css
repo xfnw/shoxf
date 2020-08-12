@@ -1,0 +1,74 @@
+
+body {
+background: black;
+font-family: monospace;
+color: #aea;
+}
+
+.preview, .box {
+border: 1px solid #aea;
+padding: 10px;
+border-radius: 10px;
+margin-top: 5px;
+}
+
+.wrapper {
+width: 700px;
+margin: 0 auto;
+}
+
+a {
+text-decoration: none;
+color: #aea;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+
+code, kbd, pre {
+background: #333;
+color: #aea;
+}
+
+pre {
+padding: 10px;
+border-radius: 2px;
+border: 1px solid #aea;
+}
+
+.search-container input[type=text] {
+  padding: 6px;
+  margin-top: 3px;
+  font-size: 17px;
+  border: 3px solid #aea;
+  color: #aea;
+  background: #333;
+}
+
+.search-container button {
+  float: left;
+  padding: 8px 10px;
+  margin-top: 3px;
+  margin-right: 16px;
+  background: #333;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  color:#aea;
+}
+
+.search-container button:hover {
+  background: #111;
+}
+
+
+@media screen and (max-width:700px) {
+.wrapper {
+width: 100%;
+}
+}
+
+
+
