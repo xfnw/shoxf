@@ -1,0 +1,4 @@
+#!/bin/bash
+grep -lrIiZ "Note: Host seems down. If it is really up, but blocking our ping probes" ./index/ | xargs -0 rm --
+
+
