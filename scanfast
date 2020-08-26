@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nmap -T4 --script ssl-cert $@ 
+

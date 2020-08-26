@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for fn in $@; do
+echo "scanning $fn"
+nmap -p 10799 -T5 --script ssl-cert $fn | tee "index/$fn.txt"
+done
+

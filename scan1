@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nmap -A -T4 --script ssl-cert $@ | tee "index/$1.txt"
+

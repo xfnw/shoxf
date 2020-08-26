@@ -10,4 +10,5 @@ crawled
 crawled/
 crawled/*
 dep.sh
+*.txt
 
