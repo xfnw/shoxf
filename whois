@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for fn in $@; do
+echo "scanning $fn"
+echo "Starting WHOIS $fn" |  tee -a "index/$fn.txt"
+whois $fn | grep Abuse | tee -a "index/$fn.txt"
+done
+
