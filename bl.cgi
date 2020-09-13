@@ -35,6 +35,7 @@ cat <<EOF
 # 211: open socks
 # 212: open http/webpage proxy
 # 22: abused vpn/proxy
+# 221: unknown abused vpn/proxy # (send help :p)
 #
 # you might notice that additional digits = sub-category :3
 
