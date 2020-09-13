@@ -1,4 +1,4 @@
 #!/bin/bash
 
-nmap -A -T4 --script ssl-cert $@ | tee -a "index/$1.txt"
+nmap -A -T4 --script ssl-cert,http-headers $@ | tee -a "index/$1.txt"
 
