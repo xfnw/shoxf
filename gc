@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# thanks jess
+
+echo "Q" | timeout 5 openssl s_client -connect $1:$2 2>&1 | grep -E "^(subject|issuer)=.+"
+
+

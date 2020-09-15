@@ -2,6 +2,7 @@
 
 for fn in $@; do
 echo "scanning $fn"
-nmap -p 10084 -A -T4 --script ssl-cert $fn | tee -a "index/$fn.txt"
+echo "Starting CURL:89 for certs $fn" |  tee -a "index/$fn.txt"
+curl -kvvI -m 1 https://$fn:89 2>&1 | awk 'BEGIN { cert=0 } /^\* SSL connection/ { cert=1 } /^\*/ { if (cert) print }' | tee -a "index/$fn.txt"
 done
 
