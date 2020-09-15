@@ -1,7 +1,7 @@
 
 
 for fn in $(grep -rl "$1" index | cut -b 7- | rev | cut -b 5- | rev);do
-echo "$fn	$2" >> $3
+echo "$fn" >> $2
 done
 
 
