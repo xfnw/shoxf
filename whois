@@ -3,6 +3,6 @@
 for fn in $@; do
 echo "scanning $fn"
 echo "Starting WHOIS $fn" |  tee -a "index/$fn.txt"
-whois $fn | grep 'Abuse\|abuse\|NetName\|descr:' | tee -a "index/$fn.txt"
+whois $fn | grep 'Abuse\|abuse\|NetName\|descr:\|Org' | tee -a "index/$fn.txt"
 done
 
