@@ -11,7 +11,7 @@ Q=$(echo "$QUERY_STRING" | sed -n 's/^.*q=\([^&]*\).*$/\1/p' | sed "s/%20/ /g; s
 if [[ $Q ]]
 then
 
-grep "$Q" bl.txt || echo "0	0	Not found in blacklist"
+grep "$Q" bl.txt lists/* || echo "0	0	Not found in blacklist"
 
 
 else
@@ -21,9 +21,12 @@ cat <<EOF
 # to query this, simply use a ?q=<ip> query string
 #
 # shoxf bl outputs data in tsv format. a typical responce would look like:
-# 127.0.0.1
+# bl.txt:127.0.0.1
+# but there is sometimes additional info after a <tab> 
 #
-# but it might have more stuff after the ip lol
+# if any lines not starting with # are seen,
+# consider it listed
+#
 EOF
 fi
 
