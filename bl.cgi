@@ -11,7 +11,7 @@ Q=$(echo "$QUERY_STRING" | sed -n 's/^.*q=\([^&]*\).*$/\1/p' | sed "s/%20/ /g; s
 if [[ $Q ]]
 then
 
-grep "$Q" bl.txt lists/* || echo "0	0	Not found in blacklist"
+	(grep "$Q" bl.txt lists/* || echo "#	0	Not found in blacklist") | head -n 1
 
 
 else
@@ -28,6 +28,7 @@ cat <<EOF
 # consider it listed
 #
 EOF
+echo "# total listed ips: "$(wc -l bl.txt lists/* | tail -n 1)
 fi
 
 
