@@ -4,6 +4,6 @@ for fn in $(grep -rl "$1" index | cut -b 7- | rev | cut -b 5- | rev);do
 echo "$fn" >> "$2"
 done
 
-sort -V "$2" > "$2.temp"
+sort -V "$2" | uniq > "$2.temp"
 mv "$2.temp" "$2"
 
