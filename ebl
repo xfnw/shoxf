@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+
+
+	echo "<div class='box'>"
+	echo "<strong>bl results</strong>: "
+	(grep "$1" bl.txt lists/* || echo "Not found in our blacklist") | head -n 1
+	echo "</div>"
+
+

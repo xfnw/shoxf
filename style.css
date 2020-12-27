@@ -1,74 +1,92 @@
 
 body {
-background: black;
-font-family: monospace;
-color: #aea;
+background: #141415;
+font-family: 'Liberation Mono', monospace;
+color: #cdcdcd;
 }
 
 .preview, .box {
-border: 1px solid #aea;
 padding: 10px;
-border-radius: 10px;
-margin-top: 5px;
+margin-top: 10px;
+background-color: #222;
 }
 
 .wrapper {
-width: 700px;
+max-width: 700px;
 margin: 0 auto;
 }
 
 a {
-text-decoration: none;
-color: #aea;
+color: #aac;
 }
 
-a:hover {
+h1 a {
+text-decoration: none;
+color: #cdcdcd;
+}
+
+h1 a::before {
+content: "#";
+color: #aac;
+margin-right: 10px;
+}
+h1 a:hover::before {
 text-decoration: underline;
 }
 
 
-code, kbd, pre {
-background: #333;
-color: #aea;
+.preview h1, h2 {
+margin: 0;
+padding: 0;
+margin-bottom: 5px;
 }
 
-pre {
-padding: 10px;
-border-radius: 2px;
-border: 1px solid #aea;
-}
 
 .search-container input[type=text] {
   padding: 6px;
   margin-top: 3px;
   font-size: 17px;
-  border: 3px solid #aea;
-  color: #aea;
+  color: #cdcdcd;
   background: #333;
+  border: 0;
+  width: calc(100% - 60px);
 }
 
 .search-container button {
-  float: left;
-  padding: 8px 10px;
+  padding: 6px 10px;
   margin-top: 3px;
-  margin-right: 16px;
   background: #333;
+  float: right;
   font-size: 17px;
   border: none;
   cursor: pointer;
-  color:#aea;
+  color:#cdcdcd;
 }
 
-.search-container button:hover {
-  background: #111;
+@font-face {
+  font-family: 'icomoon';
+  src:  
+    url('icomoon.woff?8kg27f') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
+.icon-search {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-@media screen and (max-width:700px) {
-.wrapper {
-width: 100%;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-search:before {
+  content: "\e986";
 }
-
-
-
