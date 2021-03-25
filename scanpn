@@ -2,6 +2,6 @@
 
 for fn in $@; do
 echo "scanning $fn"
-nmap -A -Pn -p- $fn | tee -a "index/$fn.txt" &
+nmap -A -Pn $fn | tee -a "index/$fn.txt" &
 done
 
