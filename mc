@@ -7,7 +7,7 @@ nmap -Pn -Ap 25565 $@ |
 
 
 
-sort -V "minecraft.txt" | uniq > "minecraft.txt.temp"
+sort "minecraft.txt" | uniq > "minecraft.txt.temp"
 mv "minecraft.txt.temp" "minecraft.txt"
 
 

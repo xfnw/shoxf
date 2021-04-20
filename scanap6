@@ -2,6 +2,6 @@
 
 for fn in $@; do
 echo "scanning $fn"
-nmap -6 --script http-headers,ssl-cert -p 80,443,10799 -Pn -T5 $fn | tee -a "index/$fn.txt" &
+nmap -6 --script ssl-cert,http-headers -p 443,80,9999,10799,56700 -Pn -T5 $fn | tee -a "index/$fn.txt" &
 done
 
